@@ -1,3 +1,5 @@
 .vscode/
 
 keycloak-trial/target/
+
+node_modules/
