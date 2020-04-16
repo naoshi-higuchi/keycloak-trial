@@ -30,4 +30,14 @@ export class HomeComponent implements OnInit {
 
     return accessToken;
   }
+
+  public get idToken() {
+    const idToken = this.oauthService.getIdToken();
+
+    if (!idToken) {
+      return null;
+    }
+
+    return idToken;
+  }
 }
