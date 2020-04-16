@@ -2,9 +2,25 @@
     AccessToken={{accessToken}}
 </div>
 
+<hr/>
+
+<div *ngIf="accessTokenDecoded">
+    AccessTokenDecoded={{accessTokenDecoded}}
+</div>
+
+<hr/>
+
 <div *ngIf="idToken">
     IdToken={{idToken}}
 </div>
+
+<hr/>
+
+<div *ngIf="idTokenDecoded">
+    IdTokenDecoded={{idTokenDecoded}}
+</div>
+
+<hr/>
 
 <button class="btn btn-default" (click)="login()">
     Login
