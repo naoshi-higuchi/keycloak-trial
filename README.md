@@ -1,5 +1,17 @@
 # keycloak-trial
 
+## Run demo app
+
+### Keycloak
+
+    $ sh scripts/00_start_keycloak.sh
+
+### Webapp
+
+    $ cd angular/myapp
+    $ npx ng serve
+
+## Setup angular webapp (memo)
 sudo apt install jq
 
 mkdir webclient
