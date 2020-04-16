@@ -30,7 +30,7 @@
     $ cd angular/myapp
     $ npx ng serve
 
-# Setup angular webapp (memo)
+# Implement angular webapp (memo)
 
 Make angular working directory.
 
