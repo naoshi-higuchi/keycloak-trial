@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
 
   public login() {
-    this.oauthService.initImplicitFlow();
+    this.oauthService.initCodeFlow();
   }
 
   public logout() {

@@ -9,6 +9,9 @@ export const authConfig: AuthConfig = {
 
     clientId: 'myappClient',
 
+    // Authorization Code Flow
+    responseType: 'code',
+
     scope: 'openid hello',
 
     // ToDo: ???
