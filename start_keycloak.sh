@@ -1,1 +1,0 @@
-docker run jboss/keycloak
