@@ -1,30 +1,63 @@
 # keycloak-trial
 
-## Run demo app
+# Required tools
 
-### Keycloak
+## For keycloak
+
+    $ sudo apt install docker.io
+
+## For npm
+
+    $ sudo apt install node.js
+    $ sudo apt install npm
+
+## For scripts
+
+    $ sudo apt install jq
+
+# Run demo app
+
+## Keycloak
 
     $ sh scripts/00_start_keycloak.sh
+    $ sh scripts/01_create_realm.sh
+    $ sh scripts/02_create_scopes.sh
+    $ sh scripts/03_create_client.sh
+    $ sh scripts/04_create_user.sh
 
-### Webapp
+## Webapp
 
     $ cd angular/myapp
     $ npx ng serve
 
-## Setup angular webapp (memo)
-sudo apt install jq
+# Setup angular webapp (memo)
 
-mkdir webclient
-cd webclient
+Make angular working directory.
 
-npm init -y
-npm install --save-dev @angular/cli
+    $ mkdir angular
+    $ cd angular
 
-npx ng new myapp
-cd myapp
+    $ npm init -y
+    $ npm install --save-dev @angular/cli
 
-npm install angular-oauth2-oidc
+Create myapp.
 
-https://www.aruse.net/entry/2018/10/17/162709
+    $ npx ng new myapp
+    $ cd myapp
 
-npx ng generate component home
+Install angular-oauth2-oidc.
+
+    $ npm install angular-oauth2-oidc
+
+Implement myapp.
+Good information in japanese: https://www.aruse.net/entry/2018/10/17/162709
+
+If you want to add angular component, Do as following.
+
+    $ npx ng generate component home
+
+If you want to dump jwt, Install @auth0/angular-jwt.
+
+('jsonwebtoken' is for node.js. Not for browser. Don't install it!)
+
+    $ npm install @auth0/angular-jwt
