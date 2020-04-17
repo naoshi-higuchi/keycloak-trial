@@ -9,11 +9,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        http.cors();
         http.authorizeRequests()
-            .mvcMatchers(HttpMethod.GET, "/hello")
-            .hasRole("HELLO")
-            .anyRequest()
-            .authenticated();
+            .antMatchers(HttpMethod.GET, "/hello").hasAuthority("SCOPE_hello")
+            .anyRequest().authenticated();
         http.oauth2ResourceServer()
             .jwt();
     }
