@@ -68,11 +68,11 @@ export class HomeComponent implements OnInit {
   }
 
   public async hello() {
-    const httpOptions = {
+    const httpOptions: Object = {
       headers: new HttpHeaders({
-        'Content-Type': 'plain/text',
         'Authorization': 'Bearer ' + this.accessToken
-      })
+      }),
+      responseType: "text"
     };
     const rsp = await this.http.get("http://localhost:8080/hello", httpOptions).toPromise();
 
