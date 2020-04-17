@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { OAuthService } from 'angular-oauth2-oidc';
-import { JwtHelperService } from '@auth0/angular-jwt'
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,7 @@ export class HomeComponent implements OnInit {
 
   private jwt;
 
-  constructor(private oauthService: OAuthService) {
+  constructor(private oauthService: OAuthService, private http: HttpClient) {
     this.jwt = new JwtHelperService();
   }
 
@@ -64,5 +65,17 @@ export class HomeComponent implements OnInit {
     }
 
     return JSON.stringify(idTokenDecoded);
+  }
+
+  public async hello() {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'plain/text',
+        'Authorization': 'Bearer ' + this.accessToken
+      })
+    };
+    const rsp = await this.http.get("http://localhost:8080/hello", httpOptions).toPromise();
+
+    console.log(JSON.stringify(rsp));
   }
 }
