@@ -10,5 +10,5 @@ cd $(dirname $0)
 curl -v --noproxy "*" \
   -H "Authorization: Bearer ${ADMIN_TOKEN}" \
   -H "Content-Type: application/json" \
-  --data "{ \"clientId\": \"${CLIENT_ID}\", \"enabled\": true, \"publicClient\": true, \"implicitFlowEnabled\": true, \"redirectUris\": [ \"http://localhost:4200/index.html\" ], \"optionalClientScopes\": [ \"hello\" ] }" \
+  --data "{ \"clientId\": \"${CLIENT_ID}\", \"enabled\": true, \"publicClient\": true, \"implicitFlowEnabled\": true, \"redirectUris\": [ \"http://localhost:4200/index.html\" ], \"optionalClientScopes\": [ \"hello\" ], \"consentRequired\": true }" \
   ${BASE_URL}/admin/realms/${REALM}/clients
