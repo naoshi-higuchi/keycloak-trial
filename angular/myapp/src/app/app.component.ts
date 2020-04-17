@@ -19,7 +19,7 @@ export class AppComponent {
 
   private async configureWithNewConfigApi() {
     this.oauthService.configure(authConfig);
-    this.oauthService.tokenValidationHandler = new JwksValidationHandler();
+    //this.oauthService.tokenValidationHandler = new JwksValidationHandler(); // For Implicit Flow
 
     await this.oauthService.loadDiscoveryDocumentAndTryLogin();
   }
