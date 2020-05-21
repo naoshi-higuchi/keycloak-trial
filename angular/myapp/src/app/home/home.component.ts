@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
 
   public login() {
     this.oauthService.initCodeFlow();
+    this.oauthService.setupAutomaticSilentRefresh();
   }
 
   public logout() {

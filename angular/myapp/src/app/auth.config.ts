@@ -12,10 +12,12 @@ export const authConfig: AuthConfig = {
     // Authorization Code Flow
     responseType: 'code',
 
-    scope: 'openid hello',
+    scope: 'openid hello offline_access',
 
     // ToDo: ???
     //strictDiscoveryDocumentValidation: false,
+
+    useSilentRefresh: true,
 
     showDebugInformation: true,
 };
