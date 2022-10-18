@@ -11,6 +11,11 @@
     $ sudo apt install nodejs
     $ sudo apt install npm
 
+## For Angular CLI
+
+    $ cd angular/myapp
+    $ npm install @angular/cli
+
 ## For scripts
 
     $ sudo apt install jq
