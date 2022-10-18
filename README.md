@@ -8,7 +8,7 @@
 
 ## For npm
 
-    $ sudo apt install node.js
+    $ sudo apt install nodejs
     $ sudo apt install npm
 
 ## For scripts
