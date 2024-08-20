@@ -9,7 +9,7 @@ export const authConfig: AuthConfig = {
 
     clientId: 'myappClient',
 
-    scope: 'openid hello',
+    scope: 'openid hello foo bar hoge',
 
     // ToDo: ???
     //strictDiscoveryDocumentValidation: false,
