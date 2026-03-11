@@ -5,7 +5,7 @@ cd $(dirname $0)
 . ./config.sh
 
 docker run -p ${PORT}:8080 \
-    -e KEYCLOAK_USER=${ADMIN_USER} \
-    -e KEYCLOAK_PASSWORD=${ADMIN_PASSWORD} \
+    -e KEYCLOAK_ADMIN=${ADMIN_USER} \
+    -e KEYCLOAK_ADMIN_PASSWORD=${ADMIN_PASSWORD} \
     --name keycloak \
-    jboss/keycloak
+    ${KEYCLOAK_IMAGE} start-dev

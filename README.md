@@ -6,10 +6,19 @@
 
     $ sudo apt install docker.io
 
-## For npm
 
-    $ sudo apt install nodejs
-    $ sudo apt install npm
+## For Node.js & npm
+
+
+
+    $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+    $ export NVM_DIR="$HOME/.nvm"
+    $ [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+    $ nvm install 22.12.0
+    $ nvm use 22.12.0
+
+Use `nvm use` (or `nvm install`) in each shell so the Angular CLI runs on Node.js 22.12.0 as recorded in `.nvmrc`.
+
 
 ## For Angular CLI
 
